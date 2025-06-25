@@ -14,12 +14,10 @@ import {
 } from "@/components/ui/table";
 
 const tabs = [
-  { id: "storage", label: "보관 상품 관리", active: false },
-  { id: "public", label: "공모 상품 관리", active: true },
-  { id: "fragment", label: "조각 상품 관리", active: false },
-  { id: "auction", label: "경매 상품 관리", active: false },
-  { id: "sales", label: "판매 상품 관리", active: false },
-  { id: "category", label: "카테고리 관리", active: false },
+  { id: "storage", label: "상품 목록", active: false },
+  { id: "public", label: "공모 상품", active: true },
+  { id: "fragment", label: "조각 상품", active: false },
+  { id: "category", label: "상품 카테고리", active: false },
 ];
 
 const products = [
@@ -72,7 +70,7 @@ const products = [
 
 export function ProductManagement() {
   return (
-    <div className="flex flex-col min-h-screen bg-gray-50">
+    <div className="flex flex-col bg-gray-50">
       {/* Header */}
       <header className="bg-white border-b border-gray-200 px-6 py-4">
         <div className="text-sm text-gray-600">상품 관리 &gt; 공모상품관리</div>
@@ -143,7 +141,7 @@ export function ProductManagement() {
                   </TableHead>
                   <TableHead className="text-center">
                     <div className="flex items-center justify-center gap-1">
-                      시예상가
+                      AI 예상가
                       <div className="flex flex-col">
                         <ChevronUp className="h-3 w-3" />
                         <ChevronDown className="h-3 w-3" />

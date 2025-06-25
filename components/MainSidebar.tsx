@@ -56,7 +56,7 @@ const menuItems = [
     url: "/product-management",
     subItems: [
       { title: "상품 목록", url: "/product-management/all" },
-      { title: "공모 상품", url: "/product-management/public" },
+      { title: "공모 상품", url: "/product-management/funding" },
       { title: "조각 상품", url: "/product-management/fragment" },
       { title: "상품 카테고리", url: "/product-management/category" },
     ],
@@ -92,7 +92,6 @@ const menuItems = [
 ];
 export function MainSidebar() {
   const pathname = usePathname();
-  console.log(pathname);
   return (
     <Sidebar className="border-r-0" collapsible="icon">
       <SidebarHeader className="border-b border-sidebar-border">
@@ -135,7 +134,12 @@ export function MainSidebar() {
                         <SidebarMenuSub className="space-y-1">
                           {item.subItems.map((subItem) => (
                             <SidebarMenuSubItem key={subItem.title}>
-                              <SidebarMenuSubButton asChild>
+                              <SidebarMenuSubButton
+                                asChild
+                                className={`${
+                                  pathname === subItem.url ? "bg-slate-700" : ""
+                                }`}
+                              >
                                 <Link href={subItem.url}>{subItem.title}</Link>
                               </SidebarMenuSubButton>
                             </SidebarMenuSubItem>
